@@ -77,13 +77,13 @@ export default () => {
     <div my-6>
       <For each={messageList()}>{(message) => <MessageItem role={message.role} message={message.content} />}</For>
       { currentAssistantMessage() && <MessageItem role="assistant" message={currentAssistantMessage} /> }
-      <Show when={!loading()} fallback={() => <div class="h-12 my-4 flex items-center justify-center bg-slate bg-op-15 text-slate rounded-sm">AI is thinking...</div>}>
+      <Show when={!loading()} fallback={() => <div class="h-12 my-4 flex items-center justify-center bg-slate bg-op-15 text-slate rounded-sm">让AI飞一会～</div>}>
         <div class="my-4 flex items-center gap-2">
           <input
             ref={inputRef!}
             type="text"
             id="input"
-            placeholder="Enter something..."
+            placeholder="呃...你要不输些东西？"
             autocomplete='off'
             autofocus
             disabled={loading()}
@@ -104,7 +104,7 @@ export default () => {
             placeholder:op-30
           />
           <button onClick={handleButtonClick} disabled={loading()} h-12 px-4 py-2 bg-slate bg-op-15 hover:bg-op-20 text-slate rounded-sm>
-            Send
+            Biu出去！
           </button>
           <button title='Clear' onClick={clear} disabled={loading()} h-12 px-4 py-2 bg-slate bg-op-15 hover:bg-op-20 text-slate rounded-sm>
             <IconClear />
